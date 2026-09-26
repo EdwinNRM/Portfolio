@@ -16,8 +16,6 @@ export function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
           <div>
             <p className="mb-6 flex items-center gap-3 font-mono text-sm text-emerald-400">
-              <span aria-hidden="true" className="h-px w-8 bg-emerald-400/60" />
-              &lt;sou /&gt;
               <span className="text-zinc-400">Olá, eu sou</span>
             </p>
             <h1 className="hero-name font-semibold text-zinc-50">{site.name}</h1>
