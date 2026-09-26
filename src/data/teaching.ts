@@ -1,12 +1,16 @@
+export const teachingSubjects = [
+  "Algoritmos e Programação",
+  "Desenvolvimento de API Back-end",
+  "Legislação e Segurança da Informação",
+  "Programação Orientada a Objetos",
+  "Programação para Dispositivos Móveis",
+  "Teste de Software",
+];
+
 export const teaching = {
   label: "Professor Formador",
   subjectLine: "Análise e Desenvolvimento de Sistemas",
-  contexts: [
-    "Desenvolvimento de APIs",
-    "Integração de sistemas",
-    "Testes de software",
-    "Qualidade e resolução de problemas",
-  ],
+  contexts: teachingSubjects,
   evidence: [
     "Comunicação técnica clara",
     "Liderança técnica",

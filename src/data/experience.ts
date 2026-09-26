@@ -1,4 +1,5 @@
 import type { ExperienceItem } from "../types";
+import { teachingSubjects } from "./teaching";
 
 export const trajectory: { label: string; note: string }[] = [
   { label: "Engenharia Mecânica", note: "base de raciocínio analítico e precisão" },
@@ -25,6 +26,14 @@ export const experience: ExperienceItem[] = [
     ],
   },
   {
+    company: "Universidade Evangélica de Goiás",
+    role: "Professor Formador",
+    period: "2026 — Atual",
+    summary:
+      "Ministro atualmente seis disciplinas no curso de Análise e Desenvolvimento de Sistemas, abrangendo programação, desenvolvimento de APIs e aplicações móveis, segurança da informação e testes de software.",
+    highlights: teachingSubjects,
+  },
+  {
     company: "Framework Digital",
     role: "Desenvolvedor de Software",
     period: "2022 — 2025",
@@ -38,19 +47,6 @@ export const experience: ExperienceItem[] = [
       "Product Owner por 1 ano — interface entre negócio, clientes e dev",
       "Liderança de 4 desenvolvedores",
       "Gestão de 11 projetos internos",
-    ],
-  },
-  {
-    company: "Universidade Evangélica de Goiás",
-    role: "Professor Formador",
-    period: "2026 — Atual",
-    summary:
-      "Ministro conteúdos no curso de Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento de APIs, integração de sistemas e testes de software.",
-    highlights: [
-      "Desenvolvimento de APIs",
-      "Integração de sistemas",
-      "Testes de software e qualidade",
-      "Resolução de problemas técnicos",
     ],
   },
   {

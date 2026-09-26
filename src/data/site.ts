@@ -25,4 +25,6 @@ export const navItems = [
   { label: "Contato", href: "#contato" },
 ] as const;
 
-export const heroStack = ["C# / .NET", "Python", "React", "TypeScript", "SQL", "Docker"];
+export const heroStack = [
+  "C# / .NET", "Python", "React", "Next.js", "NestJS", "Node.js", "TypeScript", "SQL", "Docker",
+];

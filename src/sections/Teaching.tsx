@@ -19,6 +19,8 @@ export function Teaching() {
                   {teaching.subjectLine}
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-zinc-400">
+                  Atualmente ministro seis disciplinas na Universidade Evangélica de Goiás.
+                  {" "}
                   Ensinar consolida o domínio técnico. Ministrar esses conteúdos exige e evidencia
                   comunicação clara, liderança técnica e capacidade de estruturar e transmitir
                   conceitos de forma precisa.
@@ -27,7 +29,7 @@ export function Teaching() {
               <div className="grid gap-8 sm:grid-cols-2">
                 <div>
                   <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-400">
-                    Conteúdos
+                    Disciplinas atuais ({teaching.contexts.length})
                   </h4>
                   <ul className="mt-4 space-y-2.5">
                     {teaching.contexts.map((item) => (

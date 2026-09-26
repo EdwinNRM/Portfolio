@@ -3,11 +3,11 @@ import type { SkillCategory } from "../types";
 export const skillCategories: SkillCategory[] = [
   {
     name: "Backend",
-    items: ["C#", ".NET", "Python", "FastAPI", "Node.js", "PHP", "Laravel"],
+    items: ["C#", ".NET", "Python", "FastAPI", "Node.js", "NestJS", "TypeScript", "PHP", "Laravel"],
   },
   {
     name: "Frontend",
-    items: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "React Native"],
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "React Native"],
   },
   {
     name: "Banco de dados",

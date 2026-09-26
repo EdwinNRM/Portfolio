@@ -2,16 +2,16 @@ import type { EducationItem, AwardItem } from "../types";
 
 export const education: EducationItem[] = [
   {
-    degree: "Bacharelado em Engenharia de Software",
-    institution: "UniEVANGÉLICA",
-    period: "2025",
-    type: "degree",
-  },
-  {
     degree: "Pós-graduação Lato Sensu em Inteligência Artificial e Machine Learning",
     institution: "Universidade Pitágoras Unopar Anhanguera",
     period: "2026",
     type: "postgrad",
+  },
+  {
+    degree: "Bacharelado em Engenharia de Software",
+    institution: "UniEVANGÉLICA",
+    period: "2025",
+    type: "degree",
   },
   {
     degree: "Bacharelado em Engenharia Mecânica",
