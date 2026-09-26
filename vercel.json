@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/((?!assets/|favicon.svg|og.svg|robots.txt|sitemap.xml|curriculo-edwin-medina.pdf).*)", "destination": "/index.html" }
+  ]
+}
