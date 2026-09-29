@@ -10,7 +10,7 @@ projetos construiu e como entrar em contato.
 
 Posicionar Edwin Medina como **Software Engineer / Full Stack / Backend** com foco em **C#/.NET,
 Python, FastAPI, React, TypeScript, APIs REST, SQL, Docker, integração de sistemas, testes e
-arquitetura de software** — com o GitHub (ResumeOS, Atlas Match Engine, Kleos e Atlas Agroindustrial) como
+arquitetura de software** — com o GitHub (ResumeOS, Atlas Agroindustrial, Kleos e LazyJob) como
 evidência técnica.
 
 ## Stack

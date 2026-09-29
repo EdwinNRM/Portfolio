@@ -50,96 +50,6 @@ export const projects: Project[] = [
     demo: "https://EdwinNRM.github.io/ResumeOS",
   },
   {
-    slug: "atlas-match-engine",
-    name: "Atlas Match Engine",
-    tagline: "Inteligência de carreira com matching explicável.",
-    status: "Repo público",
-    accent: "sky",
-    language: "Python",
-    updatedAt: "Fev 2026",
-    summary:
-      "Serviço em Python/FastAPI que agrega vagas de fontes públicas (LinkedIn Guest, RSS e APIs), avalia a compatibilidade com um perfil de desenvolvedor e apresenta o resultado com explicações.",
-    problem:
-      "Descobrir oportunidades relevantes é trabalhoso e opaco: cada fonte é isolada, não há contexto de perfil e não existe uma noção clara de por que uma vaga combina ou não com você.",
-    solution:
-      "Atlas expande o perfil do usuário em buscas inteligentes, coleta oportunidades de múltiplas fontes públicas, pontua cada uma internamente e traduz o resultado em níveis de compatibilidade legíveis com a explicação da correspondência.",
-    architecture: [
-      "Serviço independente: ResumeOS → Atlas → fontes de vagas",
-      "app/ → ingestão, scoring e camada de interface",
-      "Dashboard web mínimo em /atlas/dashboard",
-      "CLI para testar o motor sem interface",
-    ],
-    stack: [
-      { category: "Backend", items: ["Python 3.11+", "FastAPI", "Pydantic", "Uvicorn", "httpx", "feedparser", "Beautiful Soup", "Jinja2"] },
-      { category: "Integração", items: ["APIs públicas", "RSS", "LinkedIn Guest Jobs"] },
-      { category: "Arquitetura", items: ["Serviço modular", "Pronto para microsserviço"] },
-    ],
-    features: [
-      { title: "Agregação multi-fonte", description: "LinkedIn Guest, RSS e APIs públicas como fontes de oportunidades." },
-      { title: "Matching explicável", description: "Score interno traduzido em níveis de compatibilidade com a justificativa da correspondência." },
-      { title: "Expansão de queries a partir do perfil", description: "As buscas derivam do perfil do usuário, não de termos fixos." },
-      { title: "Dashboard mínimo", description: "Compatibilidade, fonte e motivo do match em uma interface limpa." },
-      { title: "Extensível", description: "Arquitetura modular preparada para evoluir para uma camada mais ampla de inteligência de carreira." },
-    ],
-    decisions: [
-      { decision: "Somente fontes públicas", motive: "Sem scraping autenticado, sem automação de candidaturas e sem coleta invasiva de dados." },
-      { decision: "Score interno + explicação legível", motive: "Transparência sobre se, e o quanto, uma oportunidade se alinha ao perfil." },
-      { decision: "Serviço separado do editor", motive: "ResumeOS e Atlas evoluem de forma independente sem acoplamento." },
-    ],
-    challenges: [
-      "Normalizar dados de fontes heterogêneas em um formato único.",
-      "Traduzir um score numérico em informação útil para uma pessoa decidir.",
-      "Operar apenas com endpoints públicos e ainda assim gerar resultados relevantes.",
-    ],
-    role: "Arquitetura do serviço, ingestão de dados, lógica de matching e dashboard de controle.",
-    results: ["4 commits", "CLI e dashboard funcionais com uma única origem de dados", "README documentando visão e limites do serviço"],
-    github: "https://github.com/EdwinNRM/atlas-match-engine",
-  },
-  {
-    slug: "kleos",
-    name: "Kleos",
-    tagline: "Portfólio técnico como narrativa de alto nível.",
-    status: "Repo público",
-    accent: "violet",
-    language: "TypeScript",
-    updatedAt: "Fev 2026",
-    summary:
-      "Gerador de portfólio técnico focado em julgamento técnico e prova narrativa: autoria local, preview com validação de qualidade e exportação para um artefato 100% estático.",
-    problem:
-      "Portfólios genéricos mostram o que o profissional construiu, mas não como ele decide, resolve problemas e gerencia trade-offs. Sem essa profundidade, é difícil gerar convicção em recrutamentos senior.",
-    solution:
-      "Kleos é a camada narrativa do ecossistema Calliope: um editor local com guardrails de qualidade que força foco, e uma exportação que gera um portfólio estático pronto para qualquer host.",
-    architecture: [
-      "Três estágios: autoria (editor local) → validação (preview) → exportação (ZIP estático)",
-      "Editor em Next.js; artefato final em HTML, CSS e assets puros",
-      "Sem banco de dados, sem contas, sem armazenamento server-side",
-    ],
-    stack: [
-      { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
-      { category: "Ferramentas", items: ["JSZip", "ESLint"] },
-      { category: "Arquitetura", items: ["Editor + artefato estático", "Export ZIP"] },
-    ],
-    features: [
-      { title: "Narrative-first", description: "Leitura sequencial e de alta densidade, em vez de grade de cards." },
-      { title: "Evidência visual", description: "Sistema dedicado para fluxogramas, dashboards e screenshots." },
-      { title: "Guardrails de qualidade", description: "Limites de quantidade de projetos e extensão narrativa para manter autoridade." },
-      { title: "Controle local", description: "Os dados permanecem do autor — sem nuvem obrigatória." },
-      { title: "Exportação estática", description: "Artefato zipado com HTML/CSS/assets, sem runtime Node no site final." },
-    ],
-    decisions: [
-      { decision: "Next.js apenas para autoria", motive: "Experiência de edição rica sem impactar o artefato final exportado." },
-      { decision: "Artefato 100% estático", motive: "Qualquer host estático funciona: GitHub Pages, Vercel, Netlify." },
-      { decision: "Limites rígidos de conteúdo", motive: "Menos projetos e texto mais seletivo geram mais convicção." },
-    ],
-    challenges: [
-      "Equilibrar um editor robusto com um artefato final simples.",
-      "Definir guardrails de qualidade que orientem sem engessar a escrita.",
-    ],
-    role: "Concepção do produto, editor local, pipeline de exportação e guardrails editoriais.",
-    results: ["3 estágios de workflow implementados", "Exportação em ZIP estático", "Distingue o papel do currículo (ResumeOS) da narrativa (Kleos)"],
-    github: "https://github.com/EdwinNRM/Kleos",
-  },
-  {
     slug: "atlas-agroindustrial",
     name: "Atlas Agroindustrial",
     tagline: "Da DRE ao diagnóstico: dados para decisões financeiras.",
@@ -193,6 +103,109 @@ export const projects: Project[] = [
       src: "/images/atlas-management-cockpit.png",
       alt: "Dashboard Management Cockpit da Atlas Agroindustrial com KPIs financeiros, evolução do EBITDA e análise de desvios",
       caption: "Management Cockpit — captura real do projeto. Empresa e dados fictícios, criados para demonstração.",
+    },
+  },
+  {
+    slug: "kleos",
+    name: "Kleos",
+    tagline: "Portfólio técnico como narrativa de alto nível.",
+    status: "Repo público",
+    accent: "violet",
+    language: "TypeScript",
+    updatedAt: "Set 2026",
+    summary:
+      "Editor de portfólio técnico com etapas de autoria, prévia editorial e exportação em ZIP estático. O conteúdo fica no navegador, e cada projeto é apresentado por tensão, decisão e prova.",
+    problem:
+      "Portfólios genéricos mostram o que o profissional construiu, mas não como ele decide, resolve problemas e gerencia trade-offs. Sem essa profundidade, é difícil gerar convicção em recrutamentos senior.",
+    solution:
+      "Kleos conduz a escrita da identidade, visão técnica, método e até três projetos. A prévia mostra o rascunho salvo no navegador; antes da exportação, o editor verifica campos essenciais e a estrutura dos casos. O ZIP inclui HTML, CSS e imagens enviadas pelo autor.",
+    architecture: [
+      "Três estágios: autoria (editor local) → validação (preview) → exportação (ZIP estático)",
+      "Editor em Next.js; artefato final em HTML, CSS e assets puros",
+      "Sem banco de dados, sem contas, sem armazenamento server-side",
+    ],
+    stack: [
+      { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
+      { category: "Ferramentas", items: ["JSZip", "ESLint"] },
+      { category: "Arquitetura", items: ["Editor + artefato estático", "Export ZIP"] },
+    ],
+    features: [
+      { title: "Narrative-first", description: "Leitura sequencial e de alta densidade, em vez de grade de cards." },
+      { title: "Evidência visual", description: "Sistema dedicado para fluxogramas, dashboards e screenshots." },
+      { title: "Guardrails de qualidade", description: "Limites de quantidade de projetos e extensão narrativa para manter autoridade." },
+      { title: "Controle local", description: "Os dados permanecem do autor — sem nuvem obrigatória." },
+      { title: "Exportação estática", description: "Artefato zipado com HTML/CSS/assets, sem runtime Node no site final." },
+    ],
+    decisions: [
+      { decision: "Next.js apenas para autoria", motive: "Experiência de edição rica sem impactar o artefato final exportado." },
+      { decision: "Artefato 100% estático", motive: "Qualquer host estático funciona: GitHub Pages, Vercel, Netlify." },
+      { decision: "Limites rígidos de conteúdo", motive: "Menos projetos e texto mais seletivo geram mais convicção." },
+    ],
+    challenges: [
+      "Equilibrar um editor robusto com um artefato final simples.",
+      "Definir guardrails de qualidade que orientem sem engessar a escrita.",
+    ],
+    role: "Concepção do produto, editor local, pipeline de exportação e guardrails editoriais.",
+    results: ["Editor e prévia funcionais na versão de produção local", "ZIP gerado com HTML, CSS e conteúdo editado", "Fluxo verificado no Edge com dados demonstrativos"],
+    github: "https://github.com/EdwinNRM/Kleos",
+    image: {
+      src: "/images/kleos-editor.png",
+      alt: "Editor Kleos com campos de identidade e intenção profissional",
+      caption: "Editor Kleos em execução com perfil fictício de demonstração.",
+    },
+  },
+  {
+    slug: "lazyjob",
+    name: "LazyJob",
+    tagline: "Vagas, currículo e candidaturas em um só lugar.",
+    status: "Repo público",
+    accent: "sky",
+    language: "TypeScript",
+    updatedAt: "Set 2026",
+    summary:
+      "Aplicação local para organizar vagas em um Kanban, revisar um currículo para cada oportunidade e manter versões em PDF. Combina cadastro manual, coleta assistida e histórico de candidaturas sem enviar inscrições automaticamente.",
+    problem:
+      "A busca de vagas acontece em fontes diferentes, enquanto currículo, histórico e etapas de candidatura ficam espalhados. Isso dificulta acompanhar cada oportunidade e lembrar qual documento foi preparado ou enviado.",
+    solution:
+      "O LazyJob reúne oportunidades em seis etapas de Kanban, permite cadastro manual ou consulta a fontes configuradas e mantém o currículo-base e suas versões por vaga. A pessoa revisa, baixa o PDF e se candidata no portal de origem; depois registra a etapa no aplicativo.",
+    architecture: [
+      "frontend/ → React, TypeScript e Vite para Kanban, configurações e revisão",
+      "backend/ → Express com API HTTP local",
+      "Prisma + SQLite → vagas, configurações, versões de CV e histórico",
+      "Playwright → coleta assistida de portais; RSS e APIs JSON configuráveis",
+      "pdf-lib → PDFs de currículo com fonte incorporada",
+    ],
+    stack: [
+      { category: "Frontend", items: ["React", "TypeScript", "Vite", "TanStack Query", "dnd-kit"] },
+      { category: "Backend e dados", items: ["Node.js", "Express", "Prisma", "SQLite"] },
+      { category: "Automação e documentos", items: ["Playwright", "RSS / APIs JSON", "pdf-lib"] },
+    ],
+    features: [
+      { title: "Kanban de seis etapas", description: "Acompanhamento visual de vagas, da descoberta à candidatura ou arquivamento." },
+      { title: "Coleta assistida", description: "Integrações com portais e fontes RSS/API configuradas, com histórico de falhas e deduplicação." },
+      { title: "Triagem revisável", description: "Classificação heurística de vagas de TI remotas elegíveis no Brasil, com casos ambíguos pendentes." },
+      { title: "Currículo por oportunidade", description: "Revisão do texto e geração de PDF para cada vaga, com versões anteriores preservadas." },
+      { title: "IA opcional", description: "Pode reordenar seções existentes, preservando os fatos; sem IA, usa o texto original." },
+      { title: "Uso local", description: "Servidor restrito a localhost e dados armazenados no computador do usuário." },
+    ],
+    decisions: [
+      { decision: "Aplicação local de usuário único", motive: "Manter currículo, histórico e configurações no próprio computador, sem serviço público ou contas." },
+      { decision: "Candidatura manual", motive: "A automação ajuda a organizar e preparar; a decisão e o envio permanecem com a pessoa." },
+      { decision: "Versões imutáveis do currículo", motive: "Permitir revisar o que foi preparado para cada vaga sem sobrescrever documentos anteriores." },
+      { decision: "Falhas de coleta visíveis", motive: "Portais podem bloquear automação ou mudar formato; a interface mostra erros e mantém o cadastro manual." },
+    ],
+    challenges: [
+      "Normalizar fontes de vagas com formatos e disponibilidade diferentes sem esconder falhas.",
+      "Gerar PDFs legíveis preservando conteúdo, contatos e histórico de versões.",
+      "Manter a interação do Kanban funcional por teclado e em telas menores.",
+    ],
+    role: "Concepção e desenvolvimento do frontend, API local, persistência, fluxo de currículo por vaga e automação de coleta.",
+    results: ["47 testes de backend e 10 de frontend passaram", "4 testes de navegador passaram em desktop e celular", "Fluxo de criação de vaga, PDF versionado e registro de candidatura validado com dados fictícios"],
+    github: "https://github.com/EdwinNRM/LazyJob",
+    image: {
+      src: "/images/lazyjob-kanban.png",
+      alt: "Kanban do LazyJob com vagas fictícias em seis etapas de candidatura",
+      caption: "Kanban do LazyJob com vagas fictícias usadas para demonstração.",
     },
   },
 ];

@@ -11,7 +11,6 @@ const accentStyles = {
 
 const trees: Record<string, string[]> = {
   resumeos: ["web", "api", "shared"],
-  "atlas-match-engine": ["app", "data", "run.py"],
   kleos: ["src", "public", "next.config.ts"],
 };
 
