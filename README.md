@@ -106,15 +106,22 @@ npm ci
 npm run build:pages
 ```
 
-O build específico usa `/Portfolio/` como base para assets e links, ajusta os metadados para
-`https://edwinnrm.github.io/Portfolio/` e gera arquivos HTML para as quatro rotas de projetos,
-além de `dist/404.html` para rotas desconhecidas. Publique **somente o conteúdo de `dist/`** na raiz da branch `gh-pages`, incluindo
-`.nojekyll`. Em **Settings → Pages** do repositório, selecione **Deploy from a branch**, branch
-`gh-pages`, pasta `/(root)`. Esse fluxo não precisa de um workflow próprio de GitHub Actions.
+O build específico usa `/` como base para assets e links, ajusta os metadados para
+`https://edwinnrm.dev.br/` e gera arquivos HTML para as quatro rotas de projetos, além de
+`dist/404.html` para rotas desconhecidas e `dist/CNAME` para o domínio próprio. Publique **somente
+o conteúdo de `dist/`** na raiz da branch `gh-pages`, incluindo `.nojekyll` e `CNAME`. Em
+**Settings → Pages** do repositório, selecione **Deploy from a branch**, branch `gh-pages`, pasta
+`/(root)`, e salve `edwinnrm.dev.br` em **Custom domain**. Esse fluxo não precisa de um workflow
+próprio de GitHub Actions.
 
-Para verificar localmente o build do Pages, execute `npm run preview -- --base /Portfolio/` e abra
-`http://localhost:4173/Portfolio/`. O build comum (`npm run build`) continua destinado à prévia
-privada, com base em `/`.
+No DNS do domínio, crie quatro registros A para `@` apontando para `185.199.108.153`,
+`185.199.109.153`, `185.199.110.153` e `185.199.111.153`. Para que `www` redirecione para a
+raiz, crie um CNAME `www` → `EdwinNRM.github.io` (sem `/Portfolio`). Configure o domínio no
+GitHub antes de criar os registros DNS. Depois que o certificado estiver disponível, habilite
+**Enforce HTTPS**.
+
+Para verificar localmente o build do Pages, execute `npm run preview` e abra
+`http://localhost:4173/`. O build comum (`npm run build`) continua destinado à prévia privada.
 
 ## SEO
 
@@ -136,8 +143,8 @@ Cada projeto em `src/data/projects.ts` contém:
 1. **Currículo:** `public/curriculo-edwin-medina.pdf` contém uma cópia do PDF do projeto de perfil.
    Substitua esse arquivo para atualizar o documento oferecido em "Baixar currículo".
 2. **Domínio:** o build comum usa a URL da prévia privada; o build do Pages usa
-   `https://edwinnrm.github.io/Portfolio/`. Se adotar um domínio próprio, atualize `.env`,
-   `.env.pages`, `public/robots.txt`, `public/sitemap.xml` e `scripts/prepare-pages.mjs`.
+   `https://edwinnrm.dev.br/`. Se mudar o domínio, atualize `.env.pages`, o CNAME e a URL em
+   `scripts/prepare-pages.mjs`.
 3. **Dados:** revisar `src/data/*` e ajustar qualquer informação (períodos, resumos, links).
 
 ## Licença
