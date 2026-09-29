@@ -11,7 +11,7 @@ export function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const active = useActiveSection(navItems.map((item) => item.href.slice(1)));
   const { pathname } = useLocation();
-  const sectionHref = (href: string) => pathname === "/" ? href : `/${href}`;
+  const sectionHref = (href: string) => pathname === "/" ? href : `${import.meta.env.BASE_URL}${href}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);

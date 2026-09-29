@@ -48,7 +48,7 @@ export const projects: Project[] = [
     results: ["Editor e prévia A4 com impressão em PDF pelo navegador", "Backup JSON versionado e recuperação de rascunhos", "Testes de edição, impressão, armazenamento e validação documentados no repositório"],
     github: "https://github.com/EdwinNRM/ResumeOS",
     image: {
-      src: "/images/resumeos-desktop.png",
+      src: `${import.meta.env.BASE_URL}images/resumeos-desktop.png`,
       alt: "Editor do ResumeOS com seções do currículo e prévia A4 lado a lado",
       caption: "ResumeOS em execução com dados fictícios de demonstração.",
     },
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     results: ["8 páginas integradas de análise financeira", "41.472 lançamentos sintéticos no período de 2023–2026", "Cenários Actual, Budget e Forecast", "Modelo e relatório versionados com documentação de arquitetura e dicionário de dados"],
     github: "https://github.com/EdwinNRM/AtlasAgroindustrial",
     image: {
-      src: "/images/atlas-management-cockpit.png",
+      src: `${import.meta.env.BASE_URL}images/atlas-management-cockpit.png`,
       alt: "Dashboard Management Cockpit da Atlas Agroindustrial com KPIs financeiros, evolução do EBITDA e análise de desvios",
       caption: "Management Cockpit — captura real do projeto. Empresa e dados fictícios, criados para demonstração.",
     },
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     results: ["Editor e prévia funcionais na versão de produção local", "ZIP gerado com HTML, CSS e conteúdo editado", "Fluxo verificado no Edge com dados demonstrativos"],
     github: "https://github.com/EdwinNRM/Kleos",
     image: {
-      src: "/images/kleos-editor.png",
+      src: `${import.meta.env.BASE_URL}images/kleos-editor.png`,
       alt: "Editor Kleos com campos de identidade e intenção profissional",
       caption: "Editor Kleos em execução com perfil fictício de demonstração.",
     },
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     results: ["47 testes de backend e 10 de frontend passaram", "4 testes de navegador passaram em desktop e celular", "Fluxo de criação de vaga, PDF versionado e registro de candidatura validado com dados fictícios"],
     github: "https://github.com/EdwinNRM/LazyJob",
     image: {
-      src: "/images/lazyjob-kanban.png",
+      src: `${import.meta.env.BASE_URL}images/lazyjob-kanban.png`,
       alt: "Kanban do LazyJob com vagas fictícias em seis etapas de candidatura",
       caption: "Kanban do LazyJob com vagas fictícias usadas para demonstração.",
     },

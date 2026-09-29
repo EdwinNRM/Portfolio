@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://edwinmedina.dev/sitemap.xml
+Sitemap: https://edwin-medina-portfolio.edwinnrm.chatgpt.site/sitemap.xml

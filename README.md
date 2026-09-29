@@ -1,4 +1,4 @@
-# edwinmedina.dev — Portfolio de Edwin Medina
+# Portfólio de Edwin Medina
 
 Portfólio profissional de **Edwin Medina**, Software Engineer | Full Stack & Backend.
 
@@ -57,10 +57,9 @@ em `src/data/*` — alterar o conteúdo não exige tocar nos componentes.
 - **Acessibilidade.** HTML semântico, skip link, foco visível, ARIA no menu mobile, contraste
   adequado e navegação por teclado.
 - **Fontes self-hosted.** Sem request externo a Google Fonts.
-- **Foto e evidências locais.** A foto original do GitHub está em `public/images/edwin-medina.png`;
-  a captura real do Management Cockpit está em `public/images/atlas-management-cockpit.png`.
-  Esses arquivos evitam dependência do GitHub durante a visita. Para atualizar a foto, substitua
-  o PNG mantendo o caminho em `src/data/site.ts`.
+- **Foto e evidências locais.** A foto do GitHub e as capturas dos quatro projetos estão em
+  `public/images/`. Esses arquivos evitam dependência do GitHub durante a visita. Para atualizar
+  a foto, substitua o PNG mantendo o caminho em `src/data/site.ts`.
 
 ## Como executar
 
@@ -103,12 +102,19 @@ Build command: `npm run build` · Output directory: `dist`. Adicione uma SPA red
 ### GitHub Pages
 
 ```bash
-npm run build
+npm ci
+npm run build:pages
 ```
 
-Faça o push do conteúdo de `dist` para a branch `gh-pages` (o projeto `‑‑base ./` via
-`vite.config.ts` se necessário). Alternativa: `npm run deploy` pode ser configurada com
-`gh-pages`, como nos demais projetos do repositório.
+O build específico usa `/Portfolio/` como base para assets e links, ajusta os metadados para
+`https://edwinnrm.github.io/Portfolio/` e gera arquivos HTML para as quatro rotas de projetos,
+além de `dist/404.html` para rotas desconhecidas. Publique **somente o conteúdo de `dist/`** na raiz da branch `gh-pages`, incluindo
+`.nojekyll`. Em **Settings → Pages** do repositório, selecione **Deploy from a branch**, branch
+`gh-pages`, pasta `/(root)`. Esse fluxo não precisa de um workflow próprio de GitHub Actions.
+
+Para verificar localmente o build do Pages, execute `npm run preview -- --base /Portfolio/` e abra
+`http://localhost:4173/Portfolio/`. O build comum (`npm run build`) continua destinado à prévia
+privada, com base em `/`.
 
 ## SEO
 
@@ -129,9 +135,9 @@ Cada projeto em `src/data/projects.ts` contém:
 
 1. **Currículo:** `public/curriculo-edwin-medina.pdf` contém uma cópia do PDF do projeto de perfil.
    Substitua esse arquivo para atualizar o documento oferecido em "Baixar currículo".
-2. **Domínio:** o site assume `https://edwinmedina.dev` em `index.html`, `robots.txt`,
-   `sitemap.xml` e `og:url`. Ajuste em `src/data/site.ts` e nos arquivos `public/` se o domínio
-   for outro.
+2. **Domínio:** o build comum usa a URL da prévia privada; o build do Pages usa
+   `https://edwinnrm.github.io/Portfolio/`. Se adotar um domínio próprio, atualize `.env`,
+   `.env.pages`, `public/robots.txt`, `public/sitemap.xml` e `scripts/prepare-pages.mjs`.
 3. **Dados:** revisar `src/data/*` e ajustar qualquer informação (períodos, resumos, links).
 
 ## Licença

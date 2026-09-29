@@ -9,11 +9,11 @@ export const site = {
   email: "edwinnrm@gmail.com",
   github: "https://github.com/EdwinNRM",
   githubHandle: "EdwinNRM",
-  avatar: "/images/edwin-medina.png",
+  avatar: `${import.meta.env.BASE_URL}images/edwin-medina.png`,
   linkedin: "https://www.linkedin.com/in/edwinnrmedina/",
   linkedinHandle: "edwinnrmedina",
-  curriculum: "/curriculo-edwin-medina.pdf",
-  domain: "https://edwinmedina.dev",
+  curriculum: `${import.meta.env.BASE_URL}curriculo-edwin-medina.pdf`,
+  domain: import.meta.env.VITE_SITE_URL,
 };
 
 export const navItems = [
