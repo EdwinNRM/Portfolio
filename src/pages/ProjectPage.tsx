@@ -127,7 +127,7 @@ export function ProjectPage() {
           <Container className="max-w-3xl">
             {project.image && (
               <figure className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30">
-                <a href={project.image.src} target="_blank" rel="noopener noreferrer" aria-label="Abrir captura do dashboard em tamanho original">
+                <a href={project.image.src} target="_blank" rel="noopener noreferrer" aria-label={`Abrir captura de ${project.name} em tamanho original`}>
                   <img src={project.image.src} alt={project.image.alt} width={1343} height={757} className="h-auto w-full" />
                 </a>
                 <figcaption className="px-5 py-4 text-base leading-relaxed text-zinc-400">{project.image.caption}</figcaption>
