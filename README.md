@@ -1,17 +1,19 @@
-# Portfólio de Edwin Medina
+# Meu Portfólio
 
-Portfólio profissional de **Edwin Medina**, Software Engineer | Full Stack & Backend.
+Sou **Edwin Medina**, Software Engineer com atuação em Full Stack e Backend.
 
-Um site construído para funcionar como vitrine técnica para recrutadores, tech leads e gestores
-de engenharia: responde rápido quem é o Edwin, o que ele faz, quais problemas resolve, quais
-projetos construiu e como entrar em contato.
+Criei este portfólio para apresentar quem sou, o que faço, os problemas que resolvo e as
+decisões por trás dos meus projetos. Também reuni aqui minha trajetória, minhas tecnologias e
+as formas de entrar em contato comigo.
+
+**Meu site:** [edwinnrm.dev.br](https://edwinnrm.dev.br/)
 
 ## Objetivo
 
-Posicionar Edwin Medina como **Software Engineer / Full Stack / Backend** com foco em **C#/.NET,
-Python, FastAPI, React, TypeScript, APIs REST, SQL, Docker, integração de sistemas, testes e
-arquitetura de software** — com o GitHub (ResumeOS, Atlas Agroindustrial, Kleos e LazyJob) como
-evidência técnica.
+Apresento meu trabalho em **Full Stack e Backend**, com foco em **C#/.NET, Python, FastAPI,
+React, TypeScript, APIs REST, SQL, Docker, integração de sistemas, testes e arquitetura de
+software**. Uso ResumeOS, Atlas Agroindustrial, Kleos e LazyJob como exemplos concretos do que
+construí.
 
 ## Stack
 
@@ -22,10 +24,9 @@ evidência técnica.
 - **lucide-react** (ícones)
 - **@fontsource-variable/inter** e **@fontsource-variable/jetbrains-mono** (fontes self-hosted)
 
-Stack escolhida por ser leve, rápida e fácil de manter. Sem SSG/SSR de propósito: para o
-escopo de um portfólio, um SPA com meta tags por rota atende bem, mantém o deploy simples e a
-experiência de desenvolvimento rápida. Se SEO avançado se tornar prioridade, a base atual pode
-migrar para Vite SSG (ex.: vite-press/astro) sem reescrever as seções.
+Escolhi essa stack para manter o site leve e simples de evoluir. Uso uma SPA com metadados por
+rota; se eu precisar de SEO mais avançado, posso acrescentar geração estática sem reescrever o
+conteúdo das seções.
 
 ## Arquitetura
 
@@ -42,86 +43,68 @@ src/
   index.css       Tema Tailwind
 ```
 
-**Princípio principal:** conteúdo separado de apresentação. Experiências, projetos e stack vivem
-em `src/data/*` — alterar o conteúdo não exige tocar nos componentes.
+Separei o conteúdo da apresentação: mantenho minhas experiências, projetos e stack em
+`src/data/*`, então consigo atualizar as informações sem alterar os componentes.
 
 ## Decisões técnicas
 
-- **Dados estáticos, não API em runtime.** Os dados dos repositórios vêm de `src/data/projects.ts`.
-  O site continua funcionando com o GitHub indisponível e não faz chamadas por renderização.
-  Para atualizar números (stars etc.), basta editar o arquivo de dados.
-- **Dark theme com acento único (emerald).** Design inspirado em Linear/Vercel/GitHub: bastante
-  espaço negativo, tipografia forte, detalhes de terminal/client como elemento secundário.
-- **Animações discretas.** Reveal-on-scroll via `IntersectionObserver`, com respeito a
-  `prefers-reduced-motion`.
-- **Acessibilidade.** HTML semântico, skip link, foco visível, ARIA no menu mobile, contraste
-  adequado e navegação por teclado.
-- **Fontes self-hosted.** Sem request externo a Google Fonts.
-- **Foto e evidências locais.** A foto do GitHub e as capturas dos quatro projetos estão em
-  `public/images/`. Esses arquivos evitam dependência do GitHub durante a visita. Para atualizar
-  a foto, substitua o PNG mantendo o caminho em `src/data/site.ts`.
+- **Dados estáticos.** Mantenho os dados dos projetos em `src/data/projects.ts`, sem depender da
+  API do GitHub durante a visita.
+- **Tema escuro.** Usei o verde como acento, com espaço para o conteúdo e a leitura dos projetos.
+- **Animações discretas.** Uso `IntersectionObserver` e respeito a preferência por movimento
+  reduzido (`prefers-reduced-motion`).
+- **Acessibilidade.** Incluí HTML semântico, link para pular ao conteúdo, foco visível,
+  navegação por teclado e controles identificados no menu mobile.
+- **Fontes locais.** Hospedo as fontes com o site, sem chamadas ao Google Fonts.
+- **Foto e capturas locais.** Minha foto e as imagens dos quatro projetos ficam em
+  `public/images/`, sem depender do GitHub para carregar durante a visita.
 
-## Como executar
+## Rodando localmente
+
+Para executar meu portfólio no computador:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre em `http://localhost:5173`.
+Depois, acesso `http://localhost:5173`.
 
-## Como fazer build
+## Build
 
 ```bash
 npm run build      # typecheck (tsc -b) + build de produção (vite build)
 npm run preview    # serve o dist localmente
 ```
 
-## Como fazer deploy
+## Publicação
 
-### Vercel (recomendado)
+### GitHub Pages — hospedagem atual
 
-O projeto já inclui `vercel.json` com rewrite SPA. O Vercel detecta Vite automaticamente:
-
-```bash
-npm i -g vercel
-vercel
-```
-
-Ou conecte o repositório em https://vercel.com/new — framework preset **Vite**, build
-`npm run build`, output `dist`.
-
-### Cloudflare Pages
-
-Build command: `npm run build` · Output directory: `dist`. Adicione uma SPA redirect rule:
-
-- Source: `/*`
-- Destination: `/index.html`
-- Status: `200 (Rewrite)`
-
-### GitHub Pages
+Publico a versão gerada na branch `gh-pages` do meu repositório. Para gerar os arquivos:
 
 ```bash
 npm ci
 npm run build:pages
 ```
 
-O build específico usa `/` como base para assets e links, ajusta os metadados para
-`https://edwinnrm.dev.br/` e gera arquivos HTML para as quatro rotas de projetos, além de
-`dist/404.html` para rotas desconhecidas e `dist/CNAME` para o domínio próprio. Publique **somente
-o conteúdo de `dist/`** na raiz da branch `gh-pages`, incluindo `.nojekyll` e `CNAME`. Em
-**Settings → Pages** do repositório, selecione **Deploy from a branch**, branch `gh-pages`, pasta
-`/(root)`, e salve `edwinnrm.dev.br` em **Custom domain**. Esse fluxo não precisa de um workflow
-próprio de GitHub Actions.
+Esse build usa `/` como base, define `https://edwinnrm.dev.br/` nos metadados e cria HTML para
+as quatro páginas de projetos. Também gera `404.html`, `.nojekyll` e `CNAME`. Publico **o conteúdo
+de `dist/`** na raiz de `gh-pages`; nas configurações do repositório, uso **Deploy from a branch →
+gh-pages → /(root)** e o domínio personalizado `edwinnrm.dev.br`.
 
-No DNS do domínio, crie quatro registros A para `@` apontando para `185.199.108.153`,
-`185.199.109.153`, `185.199.110.153` e `185.199.111.153`. Para que `www` redirecione para a
-raiz, crie um CNAME `www` → `EdwinNRM.github.io` (sem `/Portfolio`). Configure o domínio no
-GitHub antes de criar os registros DNS. Depois que o certificado estiver disponível, habilite
-**Enforce HTTPS**.
+No Registro.br, deixo o campo **Nome** vazio nos quatro registros A da raiz. Eles apontam para
+`185.199.108.153`, `185.199.109.153`, `185.199.110.153` e `185.199.111.153`. Para `www`, uso
+o CNAME `www` → `EdwinNRM.github.io`, sem `/Portfolio`.
 
-Para verificar localmente o build do Pages, execute `npm run preview` e abra
-`http://localhost:4173/`. O build comum (`npm run build`) continua destinado à prévia privada.
+Para conferir o build localmente, uso `npm run preview` e abro `http://localhost:4173/`. O
+build comum (`npm run build`) atende à minha prévia privada.
+
+### Outras opções de hospedagem
+
+Se eu precisar mudar de plataforma, mantenho `vercel.json` com rewrite para a SPA. No Vercel,
+uso o preset **Vite**, `npm run build` e a saída `dist`. No Cloudflare Pages, uso o mesmo build
+e configuro uma regra de rewrite de `/*` para `/index.html`.
 
 ## SEO
 
@@ -138,15 +121,14 @@ Cada projeto em `src/data/projects.ts` contém:
   resultados e papel desempenhado — tudo baseado nos repositórios reais do GitHub
   (READMEs, `package.json`, `requirements.txt` e estrutura de arquivos).
 
-## Pontos que dependem de você
+## Como mantenho o conteúdo
 
-1. **Currículo:** `public/curriculo-edwin-medina.pdf` contém uma cópia do PDF do projeto de perfil.
-   Substitua esse arquivo para atualizar o documento oferecido em "Baixar currículo".
-2. **Domínio:** o build comum usa a URL da prévia privada; o build do Pages usa
-   `https://edwinnrm.dev.br/`. Se mudar o domínio, atualize `.env.pages`, o CNAME e a URL em
-   `scripts/prepare-pages.mjs`.
-3. **Dados:** revisar `src/data/*` e ajustar qualquer informação (períodos, resumos, links).
+- **Currículo:** atualizo `public/curriculo-edwin-medina.pdf` para mudar o arquivo do botão
+  “Baixar currículo”.
+- **Domínio:** se eu mudar o endereço do site, atualizo `.env.pages`, o CNAME e a URL em
+  `scripts/prepare-pages.mjs`.
+- **Informações pessoais e projetos:** edito os arquivos em `src/data/*`.
 
 ## Licença
 
-Projeto pessoal. Conteúdo e código não são licenciados para uso livre.
+Este é um projeto pessoal. Não concedo licença para reutilização livre do conteúdo ou do código.
