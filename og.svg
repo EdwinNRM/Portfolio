@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#09090b"/>
+  <rect x="0" y="0" width="1200" height="1" fill="#26262b"/>
+  <rect x="0" y="629" width="1200" height="1" fill="#26262b"/>
+  <text x="80" y="200" font-family="monospace, Courier New" font-size="28" fill="#34d399">~/edwin-medina</text>
+  <text x="80" y="300" font-family="monospace, Courier New" font-size="90" font-weight="700" fill="#ffffff">Edwin Medina</text>
+  <text x="82" y="380" font-family="monospace, Courier New" font-size="36" fill="#a1a1aa">Software Engineer | Full Stack &amp; Backend</text>
+  <text x="80" y="470" font-family="monospace, Courier New" font-size="24" fill="#52525b">C# / .NET · Python · FastAPI · React · TypeScript · SQL · Docker</text>
+  <rect x="80" y="540" width="8" height="8" fill="#34d399"/>
+  <text x="100" y="550" font-family="monospace, Courier New" font-size="22" fill="#34d399">edwinmedina.dev</text>
+</svg>
