@@ -66,10 +66,10 @@ export const experience: ExperienceItem[] = [
     role: "Controlling Analyst Sênior",
     period: "2016 — 2020",
     summary:
-      "Análise financeira e controladoria em ambiente corporativo multinacional, com automação de processos, dashboards e uso de SAP e TOTVS Datasul.",
+      "Análise financeira e controladoria em ambiente corporativo multinacional, com automação de processos, dashboards e uso de Datasul.",
     highlights: [
       "Análise financeira e controladoria",
-      "SAP e TOTVS Datasul",
+      "Datasul",
       "Automação e dashboards",
       "Ambiente corporativo multinacional",
     ],
